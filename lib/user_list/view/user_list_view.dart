@@ -58,8 +58,8 @@ class UserListView extends StatelessWidget {
                         );
                       },
                       onLongPress: () {
-                        // Menampilkan dialog konfirmasi saat long press
-                        _showRemoveDialog(context, user);
+                        // Memanggil removeData ketika item di long press
+                        context.read<UserListCubit>().removeData(user);
                       },
                     ),
                   );
@@ -115,7 +115,7 @@ class UserListView extends StatelessWidget {
                 icon: const Icon(Icons.table_view),
                 label: const Text("Lihat Data"),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 152, 138, 177), // Ganti dari `primary` ke `backgroundColor`
+                  backgroundColor: const Color.fromARGB(255, 152, 138, 177), // Ganti dari primary ke backgroundColor
                 ),
                 onPressed: () =>
                     context.read<UserListCubit>().fetchUser(),
@@ -129,34 +129,6 @@ class UserListView extends StatelessWidget {
         backgroundColor: Colors.deepPurple,
         child: const Icon(Icons.refresh),
       ),
-    );
-  }
-
-  // Fungsi untuk menampilkan dialog konfirmasi sebelum menghapus data
-  void _showRemoveDialog(BuildContext context, User user) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Confirm Removal'),
-          content: Text('Are you sure you want to remove "${user.title}" from the list?'),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(); // Menutup dialog tanpa tindakan
-              },
-              child: const Text('Cancel'),
-            ),
-            TextButton(
-              onPressed: () {
-                context.read<UserListCubit>().removeData(user); // Menghapus data
-                Navigator.of(context).pop(); // Menutup dialog setelah penghapusan
-              },
-              child: const Text('Remove'),
-            ),
-          ],
-        );
-      },
     );
   }
 }
