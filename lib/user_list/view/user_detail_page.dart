@@ -92,6 +92,78 @@ class UserDetailPage extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(height: 20),
+
+              // Prev Button (if there is a previous user)
+              ElevatedButton(
+                onPressed: () {
+                  // Handle previous user navigation
+                  // You should implement logic to get the previous user
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepPurple,
+                  padding: const EdgeInsets.symmetric(vertical: 14.0, horizontal: 24.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+                child: const Text(
+                  'Previous User',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+
+              // Next Button (if there is a next user)
+              ElevatedButton(
+                onPressed: () {
+                  // Handle next user navigation
+                  // You should implement logic to get the next user
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepPurple,
+                  padding: const EdgeInsets.symmetric(vertical: 14.0, horizontal: 24.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+                child: const Text(
+                  'Next User',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+
+              // Remove Button
+              ElevatedButton(
+                onPressed: () {
+                  // Implement your remove user logic here
+                  // For example, remove the user from a list or database
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red, // Red color for the remove button
+                  padding: const EdgeInsets.symmetric(vertical: 14.0, horizontal: 24.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+                child: const Text(
+                  'Remove User',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
